@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <database>
-    <element audit="true" extends="task" label="Needit" max_length="40" name="x_58872_needit_needit" sizeclass="3" type="collection">
+    <element audit="true" extends="task" label="Needit" max_length="40" name="x_58872_needit_needit" sizeclass="6" type="collection">
         <element label="Test field 1" max_length="40" name="test_field_1" type="integer"/>
         <element label="Test field 2" max_length="40" name="test_field_2" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Other" max_length="40" name="u_other" type="string"/>
         <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
         <element attributes="edge_encryption_enabled=true" choice="3" default="legal" label="Request type" mandatory="true" max_length="40" name="u_request_type" type="string">
             <choice>
@@ -14,6 +15,7 @@
         </element>
         <element attributes="edge_encryption_enabled=true" choice="3" default="legal1" label="What needed" mandatory="true" max_length="40" name="u_what_needed" type="string">
             <choice>
+                <element label="Other" value="other"/>
                 <element label="Human Resources 1" sequence="0" value="hr1"/>
                 <element label="Human Resources 2" sequence="1" value="hr2"/>
                 <element label="Facilities 1" sequence="2" value="facilities1"/>
